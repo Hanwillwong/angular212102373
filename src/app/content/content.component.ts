@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-
+  nama = 'Hanwill';
+  nim = '212102373';
 }
