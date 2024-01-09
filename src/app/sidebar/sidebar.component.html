@@ -17,7 +17,8 @@
           <a href="#" class="d-block">Hanwill (212102373)</a>
         </div>
       </div>
-
+      <button class="btn btn-danger btn-block mb-3" (click)="signout()">Sign Out</button>
+      
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -44,8 +45,8 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'dashboard' ? 'active' : '' }}">
+              <li class="nav-item {{ moduleName == 'dashboard' ? 'menu-open' : '' }} {{ moduleName == 'dashboard?' ? 'menu-open' : '' }}">
+            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'dashboard' ? 'active' : '' }} {{ moduleName == 'dashboard' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v1</p>
                 </a>
@@ -66,13 +67,37 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a [routerLink]="['/mhasiswa']" class="nav-link {{ moduleName == 'mahasiswa' ? 'active' : '' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
+                Mahasiswa
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="/mahasiswa" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Mahasiswa (Non-router)
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/forex']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'forex' ? 'active' : ''}}">
+            <i class="nav-icon far fa-money-bill-alt"></i>
+              <p>
+                Forex
+              </p>
+          </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/cuaca']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'cuaca' ? 'active' : ''}}">
+            <i class="nav-icon far fa-money-bill-alt"></i>
+              <p>
+                Cuaca
+              </p>
+          </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
